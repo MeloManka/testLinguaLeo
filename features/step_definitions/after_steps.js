@@ -1,3 +1,7 @@
-/**
- * Created by kgolovchik on 12/20/15.
- */
+"use strict";
+
+module.exports = function () {
+    this.After(function () {
+        return browser.driver.manage().deleteAllCookies();
+    });
+};
