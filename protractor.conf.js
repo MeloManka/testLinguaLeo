@@ -8,12 +8,13 @@ exports.config = {
     ],
 
     capabilities: {
-        "browserName": "phantomjs",
+        "browserName": 'firefox'
+        /*"browserName": "phantomjs",
         "phantomjs.binary.path": require('phantomjs').path,
-        'phantomjs.cli.args': ['--ignore-ssl-errors=true', '--web-security=false']
+        'phantomjs.cli.args': ['--ignore-ssl-errors=true', '--web-security=false']*/
     },
 
-    baseUrl: 'https://angularjs.org/',
+    baseUrl: 'http://lingualeo.com',
 
     framework: 'custom',
 
