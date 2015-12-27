@@ -23,5 +23,4 @@ Feature: LinguaLeo home page
     When I press login button
     And I enter user email and incorrect password
     And I press popup login button
-    Then I should be on the login page
-    And I should see error message
+    Then I should see error message
