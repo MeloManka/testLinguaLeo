@@ -7,6 +7,7 @@ function HomePage() {
     this.loginInput = element(by.css("#landingPopupEmailSign"));
     this.passwordInput = element(by.css("#landingPopupPasswordSign"));
     this.popupLoginButton = element(by.css('#landingPopupBtnSign'));
+    this.errorMessage = element(by.css(".error_list"));
 }
 
 HomePage.prototype.visit = function () {
@@ -33,5 +34,11 @@ HomePage.prototype.enterPassword = function(password){
 };
 HomePage.prototype.pressPopupLoginButton = function(){
     return this.popupLoginButton.click();
+};
+HomePage.prototype.visitLoginPage = function(){
+    return browser.get("https://lingualeo.com/ru/login");
+};
+HomePage.prototype.getErrorMessage = function(){
+    return this.errorMessage.isPresent();
 };
 module.exports = HomePage;

@@ -45,4 +45,18 @@ module.exports = function () {
     this.Then('I should see "$text" title', function (title) {
         return expect(page.getTitle()).to.be.eventually.eql(title);
     });
+    this.When('I enter user email and incorrect password',function(){
+        return page.enterLogin(user.login)
+            .then(function(){
+                return page.enterPassword("aaa");
+            });
+    });
+    this.Then('I should be on the login page', function(){
+        return page.visitLoginPage().then(function () {
+            return expect(browser.getCurrentUrl()).to.eventually.eql("https://lingualeo.com/ru/login");
+        });
+    });
+    this.Then('I should see error message', function(){
+        return expect(page.getErrorMessage()).to.be.eventually.true;
+    });
 };

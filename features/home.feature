@@ -18,3 +18,10 @@ Feature: LinguaLeo home page
     And I enter user email and password
     And I press popup login button
     Then I should be on the dashboard page
+
+  Scenario: Incorrect password
+    When I press login button
+    And I enter user email and incorrect password
+    And I press popup login button
+    Then I should be on the login page
+    And I should see error message
